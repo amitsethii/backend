@@ -7,6 +7,7 @@ import com.backend.backendApi.entities.User;
 
 
 //JPA provide all functionalities
+@Repository
 public interface UserRepo extends JpaRepository<User,Integer> {
 
 }

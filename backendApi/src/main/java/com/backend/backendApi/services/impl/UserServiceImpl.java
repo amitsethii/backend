@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.web.client.ResourceAccessException;
 import com.backend.backendApi.exceptions.*;
 import com.backend.backendApi.entities.User;
@@ -11,6 +12,7 @@ import com.backend.backendApi.payloads.UserDto;
 import com.backend.backendApi.repositories.UserRepo;
 import com.backend.backendApi.services.UserService;
 
+@Service
 public class UserServiceImpl implements UserService {
 
 	@Autowired
