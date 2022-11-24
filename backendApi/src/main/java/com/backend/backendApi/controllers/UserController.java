@@ -3,6 +3,8 @@ package com.backend.backendApi.controllers;
 import java.util.List;
 import java.util.Map;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.support.Repositories;
 import org.springframework.http.HttpStatus;
@@ -20,6 +22,8 @@ import com.backend.backendApi.payloads.ApiResponse;
 import com.backend.backendApi.payloads.UserDto;
 import com.backend.backendApi.services.UserService;
 
+import lombok.val;
+
 @RestController
 @RequestMapping("/api/users")
 public class UserController {
@@ -29,14 +33,14 @@ public class UserController {
 	
 	//POST - create user
 	@PostMapping("/")
-	public ResponseEntity<UserDto> createUser(@RequestBody UserDto userDto){
+	public ResponseEntity<UserDto> createUser(@Valid  @RequestBody UserDto userDto){
 	UserDto createUserDto = this.userService.createUser(userDto);
 	return new ResponseEntity<>(createUserDto, HttpStatus.CREATED);
 	}
 	
 	//PUT - update user
 	@PutMapping("/{userId}")
-public ResponseEntity<UserDto>updateUser(@RequestBody UserDto userDto, @PathVariable("userId") Integer uid ){
+public ResponseEntity<UserDto>updateUser(@Valid @RequestBody UserDto userDto, @PathVariable("userId") Integer uid ){
 	UserDto updatedUser = this.userService.updateUser(userDto, uid);
 	return ResponseEntity.ok(updatedUser);
 }
