@@ -17,4 +17,5 @@ AWS Connection:   40
 
 ![image](https://user-images.githubusercontent.com/49728020/204134614-a53d71d4-6a63-494d-a29f-d0d8b2e47e68.png)
 
-
+closed:
+http://blogapp-env.eba-jdfma5mq.ap-northeast-1.elasticbeanstalk.com/api/users/
